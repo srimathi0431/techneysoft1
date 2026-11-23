@@ -1,0 +1,706 @@
+/* ========================================
+   FOOTER
+======================================== */
+/* Premium Typography - Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.ts-footer {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(
+    135deg,
+    #1e1b4b 0%,
+    #312e81 25%,
+    #4c1d95 50%,
+    #5b21b6 75%,
+    #6d28d9 100%
+  );
+  overflow: hidden;
+}
+
+/* Decorative waves */
+.ts-footer-waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(-99%);
+}
+
+.ts-footer-waves svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.ts-footer-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 5% 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.8fr;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1600px) {
+  .ts-footer-inner {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+/* ========================================
+   COLUMN STYLES
+======================================== */
+
+.ts-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ========================================
+   BRAND SECTION
+======================================== */
+
+.ts-footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ts-footer-logo-image {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ts-footer-logo {
+  color: #a855f7;
+  font-size: 36px;
+  font-weight: 1000;
+  font-style: italic;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.ts-footer-name {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ts-footer-description {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  max-width: 340px;
+}
+
+/* ========================================
+   SOCIAL ICONS
+======================================== */
+
+.ts-footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ts-social-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ts-social-icon svg {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.ts-social-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: #a855f7;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+.ts-social-icon:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   HEADINGS
+======================================== */
+
+.ts-footer-heading {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.ts-footer-underline {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #a855f7, #7c3aed, #6366f1);
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+/* ========================================
+   LINKS
+======================================== */
+
+.ts-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ts-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 0;
+}
+
+.ts-footer-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  transition: width 0.3s ease;
+}
+
+.ts-footer-links a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.ts-footer-links a:hover::before {
+  width: 30px;
+}
+
+/* ========================================
+   CONTACT INFO
+======================================== */
+
+.ts-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ts-footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ts-footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #a855f7;
+}
+
+.ts-footer-contact-item:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.ts-footer-contact-item:hover svg {
+  color: #c084fc;
+}
+
+/* Phone number groups with call/whatsapp actions */
+.ts-footer-phone-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.ts-footer-phone-group:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.ts-footer-phone-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ts-footer-phone-item svg {
+  flex-shrink: 0;
+  color: #a855f7;
+}
+
+.ts-footer-phone-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ts-phone-action {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ts-phone-action:hover {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  border-color: #a855f7;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+}
+
+.ts-footer-address {
+  cursor: pointer;
+}
+
+.ts-footer-address:hover span {
+  text-decoration: underline;
+}
+
+/* ========================================
+   BOTTOM COPYRIGHT
+======================================== */
+
+.ts-footer-bottom {
+  width: 100%;
+  padding: 24px 5%;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  text-align: center;
+  background: rgba(17, 24, 39, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.ts-footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ts-footer-bottom p::before,
+.ts-footer-bottom p::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+  .ts-footer-inner {
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 50px 4% 35px;
+  }
+
+  .ts-footer-logo {
+    font-size: 32px;
+  }
+
+  .ts-footer-name {
+    font-size: 14px;
+  }
+
+  .ts-footer-description {
+    font-size: 13px;
+  }
+
+  .ts-social-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ts-social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ts-footer-heading {
+    font-size: 13px;
+  }
+
+  .ts-footer-links a,
+  .ts-footer-contact-item,
+  .ts-footer-phone-item {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   SMALL TABLET (768px - 900px)
+======================================== */
+
+@media (max-width: 900px) {
+  .ts-footer-inner {
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 30px;
+    padding: 45px 3% 32px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .ts-footer-col {
+    min-width: 150px;
+  }
+
+  .ts-footer-description {
+    max-width: 280px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .ts-footer-inner {
+    grid-template-columns: 1.3fr 1fr 0.9fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 25px 12px 20px;
+    overflow: visible;
+  }
+
+  .ts-footer-col {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .ts-footer-brand {
+    min-width: 0;
+  }
+
+  /* Get In Touch - Full width at bottom */
+  .ts-footer-col:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ts-footer-logo-section {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .ts-footer-logo-image {
+    height: 26px;
+  }
+
+  .ts-footer-logo {
+    font-size: 18px;
+  }
+
+  .ts-footer-name {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .ts-footer-description {
+    font-size: 8px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .ts-footer-social {
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 9px;
+  }
+
+  .ts-social-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .ts-social-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .ts-footer-heading {
+    font-size: 9px;
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .ts-footer-underline {
+    width: 28px;
+    height: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .ts-footer-links {
+    gap: 7px;
+  }
+
+  .ts-footer-links a {
+    font-size: 8px;
+  }
+
+  .ts-footer-contact {
+    gap: 7px;
+  }
+
+  .ts-footer-contact-item {
+    font-size: 8px;
+    gap: 6px;
+  }
+
+  .ts-footer-contact-item svg {
+    width: 11px;
+    height: 11px;
+    margin-top: 0.5px;
+  }
+
+  .ts-footer-phone-group {
+    padding: 4px 6px;
+    gap: 6px;
+  }
+
+  .ts-footer-phone-item {
+    font-size: 8px;
+    gap: 5px;
+  }
+
+  .ts-footer-phone-item svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .ts-phone-action {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ts-phone-action svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .ts-footer-bottom {
+    padding: 14px 12px;
+  }
+
+  .ts-footer-bottom p {
+    font-size: 8px;
+  }
+}
+
+/* ========================================
+   MOBILE (max-width: 430px)
+======================================== */
+
+@media (max-width: 430px) {
+  .ts-footer-logo {
+    font-size: 28px;
+  }
+
+  .ts-footer-name {
+    font-size: 13px;
+  }
+
+  .ts-footer-description {
+    font-size: 12px;
+    max-width: 220px;
+    line-height: 1.6;
+  }
+
+  .ts-social-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ts-social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ts-footer-heading {
+    font-size: 13px;
+  }
+
+  .ts-footer-underline {
+    width: 40px;
+    height: 2px;
+  }
+
+  .ts-footer-links {
+    gap: 10px;
+  }
+
+  .ts-footer-links a {
+    font-size: 12px;
+  }
+
+  .ts-footer-contact {
+    gap: 10px;
+  }
+
+  .ts-footer-contact-item {
+    font-size: 12px;
+  }
+
+  .ts-footer-contact-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ts-footer-phone-group {
+    padding: 6px 10px;
+  }
+
+  .ts-footer-phone-item {
+    font-size: 12px;
+  }
+
+  .ts-phone-action {
+    width: 26px;
+    height: 26px;
+  }
+
+  .ts-phone-action svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .ts-footer-bottom {
+    padding: 18px 16px;
+  }
+
+  .ts-footer-bottom p {
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+
+  .ts-footer-bottom p::before,
+  .ts-footer-bottom p::after {
+    display: none;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .ts-footer-inner {
+    grid-template-columns: 1.3fr 1fr 0.9fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 32px 10px 24px;
+  }
+
+  /* Get In Touch - Full width at bottom */
+  .ts-footer-col:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ts-footer-logo {
+    font-size: 22px;
+  }
+
+  .ts-footer-name {
+    font-size: 9px;
+  }
+
+  .ts-footer-description {
+    font-size: 9px;
+  }
+
+  .ts-social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ts-social-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .ts-footer-heading {
+    font-size: 10px;
+  }
+
+  .ts-footer-links a,
+  .ts-footer-contact-item,
+  .ts-footer-phone-item {
+    font-size: 9px;
+  }
+
+  .ts-footer-bottom p {
+    font-size: 9px;
+  }
+}

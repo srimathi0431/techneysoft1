@@ -1,0 +1,471 @@
+/* Premium Typography - Space Grotesk for modern tech company feel */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.ts-navbar {
+  width: 100%;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(3, 9, 29, 0.94);
+  border-bottom: 1px solid rgba(70, 125, 255, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+/* Desktop/Laptop: Compact navbar */
+@media (min-width: 851px) {
+  .ts-navbar {
+    height: 64px;
+  }
+}
+
+.ts-nav-container {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0 3%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop/Laptop: Compact padding */
+@media (min-width: 851px) {
+  .ts-nav-container {
+    padding: 0 4%;
+  }
+}
+
+/* Desktop Navigation Improvements */
+@media (min-width: 1280px) {
+  .ts-navbar {
+    height: 64px;
+  }
+
+  .ts-nav-container {
+    max-width: none;
+    padding: 0 4%;
+  }
+
+  .ts-nav-links {
+    gap: 24px;
+  }
+
+  .ts-nav-links a {
+    font-size: 14px;
+  }
+
+  .ts-nav-links a.active {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .ts-logo-icon {
+    font-size: 32px;
+  }
+
+  .ts-logo-text {
+    font-size: 16px;
+  }
+
+  .ts-logo-text small {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ts-navbar {
+    height: 66px;
+  }
+
+  .ts-nav-container {
+    max-width: none;
+    padding: 0 5%;
+  }
+
+  .ts-logo-icon {
+    font-size: 34px;
+  }
+
+  .ts-logo-text {
+    font-size: 17px;
+  }
+
+  .ts-nav-links a {
+    font-size: 15px;
+  }
+
+  .ts-nav-links a.active {
+    font-size: 15px;
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    font-size: 14px;
+  }
+}
+
+.ts-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+.ts-logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ts-logo-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ts-logo-text small {
+  display: block;
+  margin-top: 2px;
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: #8c9cbd;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+/* Desktop/Laptop: Slightly larger logo */
+@media (min-width: 851px) {
+  .ts-logo {
+    gap: 10px;
+  }
+
+  .ts-logo-icon {
+    font-size: 30px;
+  }
+
+  .ts-logo-text {
+    font-size: 15px;
+  }
+
+  .ts-logo-text small {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+}
+
+.ts-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ts-nav-links a {
+  color: #d2d9ed;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 6px 0;
+  white-space: nowrap;
+}
+
+.ts-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b47aff, #6a9fff);
+  transition: width 0.3s ease;
+}
+
+.ts-nav-links a:hover::after {
+  width: 100%;
+}
+
+.ts-nav-links a:hover {
+  color: #b47aff;
+  transform: translateY(-2px);
+}
+
+.ts-nav-links a.active {
+  color: white;
+  background: linear-gradient(90deg, #793cff, #a13bff);
+  border-radius: 20px;
+  padding: 7px 14px;
+  box-shadow: 0 0 18px rgba(137, 66, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.ts-nav-links a.active::after {
+  display: none;
+}
+
+/* Desktop/Laptop: Compact nav links */
+@media (min-width: 851px) {
+  .ts-nav-links {
+    gap: 22px;
+  }
+
+  .ts-nav-links a {
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .ts-nav-links a.active {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    padding: 9px 18px;
+    font-size: 12px;
+    font-weight: 750;
+  }
+}
+
+.ts-nav-links a:hover,
+.ts-nav-links a.active {
+  color: #b47aff;
+}
+
+.ts-nav-links a.active {
+  padding: 8px 15px;
+  background: linear-gradient(90deg, #793cff, #a13bff);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 18px rgba(137, 66, 255, 0.4);
+}
+
+.ts-nav-links .ts-quote-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(100deg, #813bff, #387cff);
+  box-shadow: 0 0 15px rgba(76, 108, 255, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ts-nav-links .ts-quote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(76, 108, 255, 0.5);
+  background: linear-gradient(100deg, #9155ff, #4a94ff);
+}
+
+.ts-menu-toggle {
+  display: none;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .ts-navbar {
+    height: 55px;
+  }
+
+  .ts-nav-container {
+    padding: 0 16px;
+  }
+
+  .ts-logo {
+    gap: 6px;
+  }
+
+  .ts-logo-image {
+    height: 32px;
+  }
+
+  .ts-logo-text {
+    font-size: 10px;
+  }
+
+  .ts-logo-text small {
+    font-size: 6px;
+  }
+
+  .ts-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .ts-menu-toggle:hover {
+    background: rgba(139, 92, 246, 0.25);
+    border-color: rgba(139, 92, 246, 0.5);
+    transform: scale(1.05);
+  }
+
+  .ts-menu-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .ts-menu-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: #b47aff;
+  }
+
+  .ts-nav-links {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 55px);
+    padding: 20px 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    background: linear-gradient(180deg, #07132e 0%, #0a1a3a 100%);
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    overflow-y: auto;
+    animation: slideDown 0.3s ease-out;
+    z-index: 999;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ts-nav-links.active {
+    display: flex;
+  }
+
+  .ts-nav-links a {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #d2d9ed;
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+
+  .ts-nav-links a::after {
+    display: none;
+  }
+
+  .ts-nav-links a:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #b47aff;
+    transform: translateX(6px);
+  }
+
+  .ts-nav-links a.active {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border-color: transparent;
+    color: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    transform: scale(1);
+  }
+
+  .ts-nav-links a.active:hover {
+    transform: translateX(6px) scale(1);
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    margin-top: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  }
+
+  .ts-nav-links .ts-quote-btn:hover {
+    background: linear-gradient(135deg, #9d6eff, #7c7fff);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(139, 92, 246, 0.5);
+  }
+}
+
+/* Extra Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .ts-navbar {
+    height: 65px;
+  }
+
+  .ts-nav-container {
+    padding: 0 16px;
+  }
+
+  .ts-logo {
+    gap: 6px;
+  }
+
+  .ts-logo-icon {
+    font-size: 22px;
+  }
+
+  .ts-logo-text {
+    font-size: 11px;
+  }
+
+  .ts-logo-text small {
+    font-size: 6px;
+    margin-top: 1px;
+  }
+
+  .ts-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ts-menu-toggle svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ts-nav-links {
+    top: 65px;
+    height: calc(100vh - 65px);
+    padding: 24px 16px;
+  }
+
+  .ts-nav-links a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .ts-nav-links a.active {
+    padding: 14px 18px;
+  }
+
+  .ts-nav-links .ts-quote-btn {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,1826 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   GLOBAL SETTINGS
+========================================= */
+
+:root {
+  --ts-navy: #03091f;
+  --ts-dark: #050d28;
+  --ts-blue: #168bff;
+  --ts-cyan: #00d9ff;
+  --ts-violet: #8b3dff;
+  --ts-purple: #a51cff;
+  --ts-pink: #ed38c8;
+  --ts-white: #f8f9ff;
+  font-family: 'Inter', sans-serif;
+  color: var(--ts-white);
+  background: var(--ts-navy);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--ts-navy);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================================
+   MAIN HOMEPAGE
+========================================= */
+
+.ts-home {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px 4% 15px;
+  background:
+    radial-gradient(
+      ellipse at 80% 40%,
+      rgba(0, 87, 255, 0.20),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 10% 85%,
+      rgba(133, 0, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #030923 0%,
+      #07143d 50%,
+      #03091f 100%
+    );
+}
+
+/* Background Grid */
+.ts-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(
+      rgba(87, 147, 255, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(87, 147, 255, 0.12) 1px,
+      transparent 1px
+    );
+  background-size: 55px 55px;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+  z-index: -1;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.ts-hero {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(400px, 0.9fr) minmax(500px, 1.1fr);
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  position: relative;
+  min-height: 450px;
+}
+
+.ts-hero-copy {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 680px;
+}
+
+/* =========================================
+   HERO BADGE
+========================================= */
+
+.ts-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid rgba(90, 169, 255, 0.36);
+  border-radius: 30px;
+  color: #e5edff;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 78, 188, 0.5),
+    rgba(18, 34, 91, 0.45)
+  );
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  box-shadow: 0 0 20px rgba(0, 132, 255, 0.12);
+}
+
+.ts-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #00eaff;
+  box-shadow:
+    0 0 9px #00eaff,
+    0 0 18px #00eaff;
+  animation: ts-live-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ts-live-pulse {
+  0%, 100% {
+    background: #00eaff;
+    transform: scale(1);
+    box-shadow: 0 0 9px #00eaff, 0 0 18px #00eaff;
+  }
+  50% {
+    background: #00ff99;
+    transform: scale(1.3);
+    box-shadow: 0 0 14px #00ff99, 0 0 25px #00ff99;
+  }
+}
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.ts-hero-title {
+  margin: 14px 0 10px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: clamp(30px, 3.5vw, 45px);
+  line-height: 1.08;
+  letter-spacing: -1.6px;
+  font-weight: 900;
+  max-width: 100%;
+}
+
+.ts-typing-line {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.techney-letter {
+  background: linear-gradient(
+    90deg,
+    #36C5D9 0%,
+    #5BC9DD 25%,
+    #80D3E3 50%,
+    #A5DCE9 75%,
+    #B8DCEB 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(54, 197, 217, 0.3));
+}
+
+.future-letter {
+  background: linear-gradient(
+    90deg,
+    #B43ACB 0%,
+    #954AAD 25%,
+    #765A8F 50%,
+    #576AB8 75%,
+    #4169E1 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(180, 58, 203, 0.3));
+}
+
+/* Individual Letter Animation */
+.ts-letter-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: ts-letter-reveal-loop
+    var(--animation-duration, 2.96s)
+    cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  animation-delay: var(--delay);
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+@keyframes ts-letter-reveal-loop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.88);
+  }
+  8% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.03);
+  }
+  12%, 66% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  73% {
+    opacity: 0.6;
+    transform: translateY(0) scale(0.98);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.88);
+  }
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.ts-hero-description {
+  max-width: 450px;
+  margin: 0;
+  color: #c6d3ef;
+  font-size: 13px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.ts-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.ts-btn {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  will-change: transform;
+}
+
+.ts-btn:hover {
+  transform: translateY(-4px);
+}
+
+.ts-btn-primary {
+  color: #fff;
+  background: linear-gradient(
+    100deg,
+    #d328ed,
+    #6b42ff
+  );
+  box-shadow: 0 7px 25px rgba(172, 29, 255, 0.35);
+}
+
+.ts-btn-primary:hover {
+  box-shadow:
+    0 10px 35px rgba(172, 29, 255, 0.5),
+    0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+.ts-btn-outline {
+  color: #fff;
+  border: 1px solid rgba(225, 234, 255, 0.65);
+  background: rgba(8, 19, 56, 0.55);
+}
+
+.ts-btn-outline:hover {
+  border-color: #00d9ff;
+  box-shadow: 0 0 20px rgba(0, 215, 255, 0.25);
+}
+
+/* =========================================
+   TRUST INDICATORS
+========================================= */
+
+.ts-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.ts-trust-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #d8e3ff;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.ts-trust-row svg {
+  color: #00e9a1;
+  flex-shrink: 0;
+  animation: ts-check-glow 3s ease-in-out infinite;
+}
+
+@keyframes ts-check-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(0, 233, 161, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 7px rgba(0, 233, 161, 0.8));
+  }
+}
+
+/* =========================================
+   TECH CORE SCENE
+========================================= */
+
+.ts-tech-core-scene {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: visible;
+  background: transparent;
+  transform: scale(1);
+}
+
+.ts-tech-core-scene > div:first-child {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+
+/* Container for dashboard and floating cards */
+.ts-tech-core-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid container for floating cards (desktop - hidden) */
+.ts-float-cards-grid {
+  display: contents;
+}
+
+/* =========================================
+   TECH CORE DASHBOARD
+========================================= */
+
+.ts-core-dashboard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 10;
+  width: 420px;
+  height: 340px;
+  max-width: 85%;
+  padding: 20px 22px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 27, 67, 0.98) 0%,
+      rgba(6, 19, 47, 0.98) 55%,
+      rgba(2, 9, 31, 0.98) 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 180, 255, 0.03) 50%,
+      transparent 100%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0%,
+      rgba(0, 180, 255, 0.03) 50%,
+      transparent 100%
+    );
+  background-color: rgba(6, 19, 47, 0.95);
+  background-size: 100% 100%, 40px 100%, 100% 40px;
+  background-position: 0 0, 0 0, 0 0;
+  border: 2.5px solid #00e5ff;
+  box-shadow:
+    0 0 35px rgba(0, 229, 255, 0.75),
+    0 0 70px rgba(0, 200, 255, 0.5),
+    0 0 110px rgba(0, 160, 255, 0.35),
+    0 0 150px rgba(0, 120, 255, 0.2),
+    inset 0 0 50px rgba(0, 200, 255, 0.15),
+    inset 0 0 25px rgba(0, 150, 255, 0.1);
+  opacity: 1;
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
+  backdrop-filter: blur(10px);
+  animation: ts-core-float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  will-change: transform, filter;
+}
+
+.ts-core-dashboard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(0, 200, 255, 0.08) 39px,
+      rgba(0, 200, 255, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(0, 200, 255, 0.08) 39px,
+      rgba(0, 200, 255, 0.08) 40px
+    );
+  pointer-events: none;
+  opacity: 1;
+  animation: ts-grid-glow 5s ease-in-out infinite;
+}
+
+.ts-core-dashboard::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    #00e5ff,
+    #00b8ff,
+    #0088ff,
+    #00e5ff
+  );
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  animation: ts-border-rotate 4s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes ts-border-rotate {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    background-position: 200% 50%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes ts-core-float {
+  0%, 100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      perspective(1000px)
+      rotateY(0deg)
+      translateY(0);
+  }
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      perspective(1000px)
+      rotateY(0deg)
+      translateY(-10px);
+  }
+}
+
+@keyframes ts-grid-glow {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   CORE HEADER
+========================================= */
+
+.ts-core-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(100, 190, 255, 0.22);
+}
+
+.ts-core-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00dcff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.ts-core-brand svg {
+  animation: ts-cpu-pulse 3s ease-in-out infinite;
+}
+
+@keyframes ts-cpu-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px #00dcff);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #00dcff);
+  }
+}
+
+.ts-core-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #54ffc1;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.ts-core-live i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #54ffc1;
+  box-shadow:
+    0 0 8px #54ffc1,
+    0 0 16px #54ffc1;
+  animation: ts-live-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes ts-live-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}
+
+/* =========================================
+   CORE CONTENT
+========================================= */
+
+.ts-core-content {
+  margin-top: 14px;
+}
+
+.ts-core-content h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 5px;
+  animation: ts-content-glow 4s ease-in-out infinite;
+}
+
+.ts-core-content p {
+  font-size: 11px;
+  color: #a8bddc;
+  margin: 0;
+}
+
+@keyframes ts-content-glow {
+  0%, 100% {
+    text-shadow: 0 0 3px rgba(0, 217, 255, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(0, 217, 255, 0.5);
+  }
+}
+
+/* =========================================
+   ENERGY CORE
+========================================= */
+
+.ts-energy-core {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ts-energy-ring-outer {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  border: 2px solid rgba(0, 216, 255, 0.5);
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: ts-ring-outer 15s linear infinite;
+}
+
+.ts-energy-ring-inner {
+  position: absolute;
+  width: 92px;
+  height: 60px;
+  border: 2px solid rgba(185, 56, 255, 0.6);
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: ts-ring-inner 10s linear infinite reverse;
+}
+
+.ts-energy-center {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    #087bc4,
+    #07336e
+  );
+  border: 2px solid #00dfff;
+  color: #ffffff;
+  box-shadow:
+    0 0 20px #00aaff,
+    0 0 50px rgba(0, 180, 255, 0.5);
+  animation: ts-energy-pulse 3s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.ts-energy-center svg {
+  filter: drop-shadow(0 0 8px #9af7ff);
+  width: 32px;
+  height: 32px;
+  animation: ts-zap-glow 2s ease-in-out infinite;
+}
+
+@keyframes ts-ring-outer {
+  from {
+    transform: rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotateZ(360deg);
+  }
+}
+
+@keyframes ts-ring-inner {
+  from {
+    transform: rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotateZ(360deg);
+  }
+}
+
+@keyframes ts-energy-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 20px #00aaff,
+      0 0 50px rgba(0, 180, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 30px #00dfff,
+      0 0 70px rgba(0, 217, 255, 0.7);
+  }
+}
+
+@keyframes ts-zap-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #9af7ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #00eaff);
+  }
+}
+
+/* =========================================
+   CORE STATS
+========================================= */
+
+.ts-core-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid rgba(100, 180, 255, 0.25);
+}
+
+.ts-core-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ts-core-stats svg {
+  width: 16px;
+  height: 16px;
+  color: #00dfff;
+  animation: ts-stat-icon-glow 3s ease-in-out infinite;
+}
+
+.ts-core-stats strong {
+  font-size: 12px;
+  font-weight: 850;
+  color: #00dfff;
+  white-space: nowrap;
+}
+
+.ts-core-stats span {
+  font-size: 8px;
+  letter-spacing: 0.6px;
+  color: #8ca8d1;
+}
+
+@keyframes ts-stat-icon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(0, 223, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(0, 223, 255, 0.8));
+  }
+}
+
+/* =========================================
+   FLOATING TECH CARDS
+========================================= */
+
+.ts-float-card {
+  position: absolute;
+  z-index: 15;
+  width: 160px;
+  min-width: 160px;
+  min-height: 115px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 35, 85, 0.98),
+    rgba(8, 22, 60, 0.98)
+  );
+  border: 2px solid;
+  backdrop-filter: blur(15px);
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.5),
+    0 0 25px currentColor,
+    inset 0 0 20px rgba(0, 150, 255, 0.1);
+  animation: ts-float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.ts-float-card svg {
+  width: 34px;
+  height: 34px;
+  filter:
+    drop-shadow(0 0 15px currentColor)
+    drop-shadow(0 0 8px currentColor);
+  animation: ts-card-icon-pulse 3s ease-in-out infinite;
+}
+
+.ts-float-card strong {
+  font-size: 13px;
+  line-height: 1.3;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.4),
+    0 0 20px currentColor;
+}
+
+.ts-float-top-left {
+  left: 5%;
+  top: 18%;
+  animation-delay: -1s;
+  border-color: rgba(0, 240, 255, 0.85);
+  --card-rotate-y: 8deg;
+  --card-rotate-z: -2deg;
+}
+
+.ts-float-top-left svg {
+  color: #00e5ff;
+}
+
+.ts-float-top-right {
+  right: 5%;
+  top: 18%;
+  animation-delay: -2.5s;
+  border-color: rgba(100, 150, 255, 0.85);
+  --card-rotate-y: -8deg;
+  --card-rotate-z: 2deg;
+}
+
+.ts-float-top-right svg {
+  color: #6a9eff;
+}
+
+.ts-float-bottom-left {
+  left: 5%;
+  bottom: 18%;
+  animation-delay: -3.5s;
+  border-color: rgba(0, 240, 255, 0.85);
+  --card-rotate-y: 6deg;
+  --card-rotate-z: 1deg;
+}
+
+.ts-float-bottom-left svg {
+  color: #00e5ff;
+}
+
+.ts-float-bottom-right {
+  right: 5%;
+  bottom: 18%;
+  animation-delay: -4.5s;
+  border-color: rgba(200, 80, 255, 0.85);
+  --card-rotate-y: -6deg;
+  --card-rotate-z: -1deg;
+}
+
+.ts-float-bottom-right svg {
+  color: #d060ff;
+}
+
+@keyframes ts-float {
+  0%, 100% {
+    transform:
+      perspective(800px)
+      rotateY(var(--card-rotate-y, 0deg))
+      rotateZ(var(--card-rotate-z, 0deg))
+      translateY(0);
+  }
+  50% {
+    transform:
+      perspective(800px)
+      rotateY(var(--card-rotate-y, 0deg))
+      rotateZ(var(--card-rotate-z, 0deg))
+      translateY(-15px);
+  }
+}
+
+@keyframes ts-card-icon-pulse {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 7px currentColor)
+      drop-shadow(0 0 3px currentColor);
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 17px currentColor)
+      drop-shadow(0 0 10px currentColor);
+  }
+}
+
+/* =========================================
+   STATISTICS BAR
+========================================= */
+
+.ts-statistics-bar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 8px auto 0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 18px;
+  background: linear-gradient(
+    110deg,
+    rgba(31, 15, 83, 0.95),
+    rgba(3, 22, 58, 0.95)
+  );
+  border-left: 3px solid #a723ff;
+  border-right: 3px solid #00d9ff;
+  box-shadow:
+    0 0 30px rgba(105, 30, 255, 0.18),
+    0 0 40px rgba(0, 217, 255, 0.12);
+  position: relative;
+  z-index: 5;
+  animation: ts-stat-bar-glow 5s ease-in-out infinite;
+}
+
+@keyframes ts-stat-bar-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 25px rgba(105, 30, 255, 0.15),
+      0 0 30px rgba(0, 217, 255, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(105, 30, 255, 0.3),
+      0 0 45px rgba(0, 217, 255, 0.2);
+  }
+}
+
+.ts-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ts-stat-item svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #00d9ff;
+  transition: filter 0.3s ease;
+}
+
+.ts-stat-item:hover svg {
+  filter: drop-shadow(0 0 9px currentColor);
+}
+
+.ts-stat-item:nth-of-type(even) svg {
+  color: #b64bff;
+}
+
+.ts-stat-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ts-stat-item strong {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(
+    135deg,
+    #00d9ff,
+    #a855f7,
+    #ec4899
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ts-stat-item span {
+  font-size: 9px;
+  color: #d3ddf3;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ts-stat-divider {
+  width: 1px;
+  height: 38px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(120, 160, 255, 0.5),
+    transparent
+  );
+  animation: ts-divider-glow 3s ease-in-out infinite;
+}
+
+@keyframes ts-divider-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   FEATURED SERVICES
+========================================= */
+
+.ts-service-strip {
+  width: 100%;
+  max-width: 1200px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  position: relative;
+  z-index: 5;
+}
+
+.ts-service-card {
+  position: relative;
+  min-height: 72px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 30, 75, 0.95),
+    rgba(4, 15, 43, 0.95)
+  );
+  border: 1px solid rgba(94, 134, 255, 0.18);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.ts-service-card:hover {
+  transform: translateY(-7px);
+  border-color: #00cfff;
+  box-shadow: 0 10px 30px rgba(0, 140, 255, 0.16);
+}
+
+.ts-service-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ts-service-card:hover .ts-service-icon {
+  transform: rotate(-6deg) scale(1.06);
+  box-shadow: 0 0 18px currentColor;
+}
+
+.ts-service-icon.violet {
+  color: #b66bff;
+  background: rgba(145, 60, 255, 0.15);
+}
+
+.ts-service-icon.orange {
+  color: #ffae55;
+  background: rgba(255, 145, 50, 0.13);
+}
+
+.ts-service-icon.green {
+  color: #34e8b0;
+  background: rgba(30, 220, 155, 0.13);
+}
+
+.ts-service-icon.blue {
+  color: #42baff;
+  background: rgba(40, 160, 255, 0.13);
+}
+
+.ts-service-card strong {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 800;
+  color: #edf3ff;
+}
+
+.ts-service-arrow {
+  margin-left: auto;
+  color: #00d9ff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.ts-service-card:hover .ts-service-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   BOTTOM GLOW
+========================================= */
+
+.ts-bottom-glow {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  left: 50%;
+  bottom: -150px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(105, 30, 255, 0.25),
+      transparent 70%
+    );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+  animation: ts-bottom-glow-pulse 6s ease-in-out infinite;
+}
+
+@keyframes ts-bottom-glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   ANCHOR TARGETS
+========================================= */
+
+.ts-anchor-targets {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.ts-anchor-targets span {
+  display: block;
+}
+
+/* =========================================
+   LAPTOP RESPONSIVE
+========================================= */
+
+@media (min-width: 1025px) and (max-width: 1450px) {
+  .ts-home {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .ts-hero-title {
+    font-size: clamp(37px, 3.5vw, 48px);
+  }
+
+  .ts-tech-core-scene {
+    height: 500px;
+    transform: scale(0.95);
+  }
+
+  .ts-core-dashboard {
+    width: 400px;
+    height: 320px;
+  }
+
+  .ts-float-card {
+    width: 145px;
+    min-width: 145px;
+    min-height: 105px;
+  }
+
+  .ts-float-card svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ts-float-card strong {
+    font-size: 12px;
+  }
+
+  .ts-service-strip {
+    max-width: 1100px;
+  }
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1600px) {
+  .ts-home {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .ts-hero {
+    max-width: 1500px;
+  }
+
+  .ts-hero-title {
+    font-size: 58px;
+  }
+
+  .ts-tech-core-scene {
+    height: 650px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .ts-home {
+    padding: 25px 25px;
+  }
+
+  .ts-hero-title {
+    font-size: clamp(30px, 4vw, 40px);
+    letter-spacing: -1.5px;
+  }
+
+  .ts-hero-description {
+    font-size: 12px;
+  }
+
+  .ts-tech-core-scene {
+    height: 460px;
+    transform: scale(0.85);
+  }
+
+  .ts-core-dashboard {
+    width: 380px;
+    height: 310px;
+  }
+
+  .ts-float-card {
+    width: 130px;
+    min-width: 130px;
+    min-height: 95px;
+  }
+
+  .ts-float-card svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ts-float-card strong {
+    font-size: 11px;
+  }
+
+  .ts-statistics-bar {
+    padding: 18px 20px;
+    gap: 10px;
+  }
+
+  .ts-stat-item {
+    gap: 10px;
+  }
+
+  .ts-stat-item strong {
+    font-size: 22px;
+  }
+
+  .ts-stat-item span {
+    font-size: 10px;
+  }
+
+  .ts-stat-item svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .ts-stat-divider {
+    height: 42px;
+  }
+
+  .ts-service-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   MOBILE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+  .ts-home {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px 12px 20px;
+    overflow: hidden;
+  }
+
+  .ts-hero {
+    width: 100%;
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .ts-hero-copy {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    z-index: 10;
+    position: relative;
+  }
+
+  .ts-eyebrow {
+    font-size: 8px;
+    padding: 5px 9px;
+    gap: 5px;
+  }
+
+  .ts-hero-title {
+    font-size: clamp(20px, 6.5vw, 32px);
+    letter-spacing: -0.8px;
+    line-height: 1.12;
+    margin: 10px 0 !important;
+    gap: 4px;
+  }
+
+  .ts-typing-line {
+    white-space: nowrap;
+  }
+
+  .ts-hero-description {
+    font-size: 11px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .ts-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .ts-btn {
+    width: 100%;
+    min-height: 38px;
+    font-size: 10px;
+    padding: 0 16px;
+  }
+
+  .ts-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-top: 12px;
+  }
+
+  .ts-trust-row span {
+    font-size: 8px;
+  }
+
+  /* MOBILE TECH CORE - COMPACT */
+  .ts-tech-core-scene {
+    width: 100%;
+    height: 400px;
+    margin: 5px auto;
+    transform: scale(1);
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ts-tech-core-scene > div:first-child {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    z-index: 1 !important;
+    opacity: 0.5 !important;
+    filter: blur(1px) !important;
+    pointer-events: none;
+  }
+
+  /* Mobile: Dashboard centered */
+  .ts-tech-core-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile: Cards use absolute positioning around dashboard */
+  .ts-float-cards-grid {
+    display: contents;
+  }
+
+  /* MOBILE DASHBOARD - SMALLER IN CENTER */
+  .ts-core-dashboard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    min-height: 200px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    z-index: 10;
+    box-shadow:
+      0 0 20px rgba(0, 229, 255, 0.5),
+      0 0 40px rgba(0, 200, 255, 0.3),
+      0 0 60px rgba(0, 160, 255, 0.2),
+      inset 0 0 30px rgba(0, 200, 255, 0.1);
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+    /* Keep dashboard animations running on mobile */
+  }
+
+  .ts-core-header {
+    padding-bottom: 10px;
+  }
+
+  .ts-core-header {
+    padding-bottom: 8px;
+  }
+
+  .ts-core-brand {
+    font-size: 8px;
+    gap: 4px;
+  }
+
+  .ts-core-brand svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .ts-core-live {
+    font-size: 7px;
+    gap: 3px;
+  }
+
+  .ts-core-live i {
+    width: 5px;
+    height: 5px;
+  }
+
+  .ts-core-content {
+    margin-top: 6px;
+  }
+
+  .ts-core-content h2 {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .ts-core-content p {
+    font-size: 7px;
+  }
+
+  .ts-energy-core {
+    height: 60px;
+    margin: 4px 0;
+  }
+
+  .ts-energy-ring-outer {
+    width: 70px;
+    height: 45px;
+  }
+
+  .ts-energy-ring-inner {
+    width: 55px;
+    height: 35px;
+  }
+
+  .ts-energy-center {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ts-energy-center svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ts-core-stats {
+    padding-top: 6px;
+  }
+
+  .ts-core-stats > div {
+    gap: 2px;
+  }
+
+  .ts-core-stats svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ts-core-stats strong {
+    font-size: 7px;
+  }
+
+  .ts-core-stats span {
+    font-size: 5.5px;
+  }
+
+  /* MOBILE FLOATING CARDS - SMALLER AROUND DASHBOARD */
+  .ts-float-card {
+    position: absolute;
+    width: 85px;
+    min-width: 85px;
+    min-height: 65px;
+    padding: 7px 5px;
+    gap: 4px;
+    border-radius: 10px;
+    z-index: 5;
+    margin: 0;
+    animation: ts-float 6s ease-in-out infinite;
+  }
+
+  .ts-float-card svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ts-float-card strong {
+    font-size: 7.5px;
+    line-height: 1.2;
+  }
+
+  /* Position cards closer around smaller dashboard */
+  .ts-float-top-left {
+    left: 1%;
+    top: 8%;
+  }
+
+  .ts-float-top-right {
+    right: 1%;
+    top: 8%;
+  }
+
+  .ts-float-bottom-left {
+    left: 1%;
+    bottom: 8%;
+  }
+
+  .ts-float-bottom-right {
+    right: 1%;
+    bottom: 8%;
+  }
+
+  /* MOBILE STATISTICS */
+  .ts-statistics-bar {
+    width: 100%;
+    margin: 15px auto 0;
+    padding: 12px 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    border-radius: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ts-statistics-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ts-stat-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    flex: 1;
+    min-width: fit-content;
+  }
+
+  .ts-stat-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .ts-stat-item div {
+    align-items: center;
+    gap: 2px;
+  }
+
+  .ts-stat-item strong {
+    font-size: 12px;
+  }
+
+  .ts-stat-item span {
+    font-size: 6px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .ts-stat-divider {
+    display: none;
+  }
+
+  /* MOBILE SERVICES */
+  .ts-service-strip {
+    width: 100%;
+    margin: 12px auto 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .ts-service-card {
+    min-height: 60px;
+    padding: 8px 7px;
+    gap: 7px;
+    border-radius: 10px;
+  }
+
+  .ts-service-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .ts-service-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .ts-service-card strong {
+    font-size: 8px;
+  }
+
+  .ts-service-arrow {
+    display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .ts-home {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ts-hero-title {
+    font-size: 22px;
+    letter-spacing: -0.9px;
+  }
+
+  .ts-tech-core-scene {
+    height: 380px;
+  }
+
+  .ts-core-dashboard {
+    max-width: 240px;
+    min-height: 190px;
+    padding: 9px 11px;
+  }
+
+  .ts-float-card {
+    width: 78px;
+    min-width: 78px;
+    min-height: 60px;
+    padding: 6px 4px;
+  }
+
+  .ts-float-card svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ts-float-card strong {
+    font-size: 7px;
+  }
+
+  .ts-float-top-left {
+    left: 0.5%;
+    top: 6%;
+  }
+
+  .ts-float-top-right {
+    right: 0.5%;
+    top: 6%;
+  }
+
+  .ts-float-bottom-left {
+    left: 0.5%;
+    bottom: 6%;
+  }
+
+  .ts-float-bottom-right {
+    right: 0.5%;
+    bottom: 6%;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 340px) {
+  .ts-hero-title {
+    font-size: 20px;
+    letter-spacing: -0.7px;
+  }
+
+  .ts-tech-core-scene {
+    height: 360px;
+  }
+
+  .ts-core-dashboard {
+    max-width: 220px;
+    min-height: 180px;
+    padding: 8px 10px;
+  }
+
+  .ts-float-card {
+    width: 72px;
+    min-width: 72px;
+    min-height: 56px;
+    padding: 5px 3px;
+  }
+
+  .ts-float-card svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .ts-float-card strong {
+    font-size: 6.5px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

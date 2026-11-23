@@ -1,0 +1,474 @@
+/* ==========================================
+   PROJECTS PAGE - REFERENCE DESIGN
+========================================== */
+
+.projects-page {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  padding: 50px 5% 40px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f0ff 0%, #e8ddff 50%, #f2ebff 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+.projects-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(167, 91, 255, 0.15), transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.12), transparent 50%);
+  pointer-events: none;
+}
+
+.projects-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADING SECTION
+========================================== */
+
+.projects-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.projects-heading h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.8px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   PRICING BADGE
+========================================== */
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 40px;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+}
+
+.badge-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.badge-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.badge-content strong {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.badge-content span {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+}
+
+/* ==========================================
+   PROJECTS CAROUSEL - NO ARROWS/DOTS
+========================================== */
+
+.projects-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px 0;
+  scroll-behavior: auto;
+}
+
+.projects-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-carousel-container:active {
+  cursor: grabbing;
+}
+
+.projects-carousel-track {
+  display: flex;
+  gap: 14px;
+  width: fit-content;
+}
+
+/* ==========================================
+   PROJECT SERVICE CARD - SIMPLE MEDIUM SIZE
+========================================== */
+
+.project-service-card {
+  flex: 0 0 200px;
+  min-height: 160px;
+  padding: 18px 16px;
+  background: white;
+  border: 1.5px solid var(--service-color, #8b5cf6);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.project-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.18);
+}
+
+.project-service-icon-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.project-service-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--service-color, #8b5cf6);
+}
+
+.project-service-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.project-service-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: left;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.project-service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.project-service-features li {
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.8;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.project-service-features li::before {
+  content: '→';
+  color: var(--service-color, #8b5cf6);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Two-column for Software Development */
+.project-service-features.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 8px;
+  max-height: 140px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.3) transparent;
+}
+
+.project-service-features.two-column::-webkit-scrollbar {
+  width: 3px;
+}
+
+.project-service-features.two-column::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 2px;
+}
+
+.project-service-features.two-column li {
+  font-size: 8px;
+  line-height: 1.6;
+  margin-bottom: 2px;
+}
+
+/* ==========================================
+   BENEFITS BAR
+========================================== */
+
+.benefits-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 35px;
+  padding: 16px 28px;
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.1);
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefit-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  border-radius: 50%;
+}
+
+.benefit-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.benefit-item span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .projects-page {
+    padding: 40px 4% 35px;
+  }
+
+  .projects-heading h1 {
+    font-size: 36px;
+  }
+
+  .project-service-card {
+    flex: 0 0 180px;
+    min-height: 150px;
+  }
+
+  .benefits-bar {
+    gap: 20px;
+    padding: 14px 22px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 35px 4% 30px;
+  }
+
+  .projects-heading {
+    margin-bottom: 28px;
+  }
+
+  .projects-heading h1 {
+    font-size: 26px;
+  }
+
+  .projects-subtitle {
+    font-size: 12px;
+  }
+
+  .pricing-badge {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .badge-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .badge-content strong {
+    font-size: 10px;
+  }
+
+  .badge-content span {
+    font-size: 9px;
+  }
+
+  .projects-carousel-track {
+    gap: 12px;
+  }
+
+  .project-service-card {
+    flex: 0 0 170px;
+    min-height: 140px;
+    padding: 14px 12px;
+  }
+
+  .project-service-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .project-service-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .project-service-card h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .project-service-features li {
+    font-size: 9px;
+  }
+
+  .project-service-features.two-column li {
+    font-size: 7px;
+  }
+
+  .benefits-bar {
+    gap: 14px;
+    padding: 12px 18px;
+    margin-top: 28px;
+  }
+
+  .benefit-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .benefit-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .benefit-item span {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .projects-page {
+    padding: 28px 3% 25px;
+  }
+
+  .projects-heading h1 {
+    font-size: 22px;
+  }
+
+  .pricing-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 14px;
+  }
+
+  .badge-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-service-card {
+    flex: 0 0 160px;
+    min-height: 130px;
+  }
+
+  .benefits-bar {
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .benefit-item {
+    gap: 6px;
+  }
+
+  .benefit-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .benefit-item span {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-service-card {
+    transition: none;
+  }
+}

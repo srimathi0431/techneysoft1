@@ -1,0 +1,669 @@
+/* =====================================
+   MAIN PROCESS PAGE
+===================================== */
+
+.process-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 45px 3% 65px;
+  overflow: hidden;
+  isolation: isolate;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(
+      ellipse at 0% 40%,
+      rgba(155, 90, 255, 0.22),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 100% 55%,
+      rgba(113, 91, 255, 0.20),
+      transparent 40%
+    ),
+    linear-gradient(
+      120deg,
+      #f6f3ff,
+      #efedff 50%,
+      #faf8ff
+    );
+  color: #151b50;
+}
+
+@media (min-width: 1600px) {
+  .process-page {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.process-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* =====================================
+   BACKGROUND GRID
+===================================== */
+
+.process-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(
+      rgba(132, 95, 255, 0.17) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(132, 95, 255, 0.17) 1px,
+      transparent 1px
+    );
+  background-size: 45px 45px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* =====================================
+   GLOW EFFECTS
+===================================== */
+
+.process-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.process-glow-left {
+  width: 370px;
+  height: 370px;
+  left: -190px;
+  top: 80px;
+  background: #a43dff;
+  opacity: 0.34;
+  animation: processGlow 9s ease-in-out infinite alternate;
+}
+
+.process-glow-right {
+  width: 350px;
+  height: 350px;
+  right: -170px;
+  bottom: 20px;
+  background: #665aff;
+  opacity: 0.28;
+  animation: processGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+/* =====================================
+   BACKGROUND WAVES
+===================================== */
+
+.process-wave {
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  height: 100px;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.process-wave-top {
+  top: 0;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(168, 94, 255, 0.22),
+    transparent
+  );
+  transform: skewY(-7deg);
+}
+
+.process-wave-bottom {
+  bottom: -30px;
+  height: 150px;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(111, 103, 255, 0.2),
+    rgba(174, 92, 255, 0.15),
+    transparent
+  );
+  transform: skewY(-5deg);
+  filter: blur(15px);
+}
+
+/* =====================================
+   HEADING
+===================================== */
+
+.process-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.process-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 17px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #a438ff,
+    #7148ff
+  );
+  border-radius: 25px;
+  box-shadow:
+    0 5px 20px rgba(140, 55, 255, 0.32);
+}
+
+.process-heading h1 {
+  margin: 13px 0 8px;
+  color: #171e58;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.process-heading p {
+  color: #596087;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* =====================================
+   TIMELINE
+===================================== */
+
+.process-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+/* =====================================
+   CONNECTING TRACK
+===================================== */
+
+.process-track {
+  position: absolute;
+  top: 29px;
+  left: 8.33%;
+  right: 8.33%;
+  height: 3px;
+  background: rgba(137, 99, 255, 0.25);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.process-track-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #b03aff,
+    #853cff,
+    #387cff,
+    #853cff
+  );
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: processLine 2s ease forwards;
+  box-shadow: 0 0 10px rgba(140, 70, 255, 0.55);
+}
+
+/* =====================================
+   PROCESS STEP
+===================================== */
+
+.process-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* =====================================
+   ICON WRAPPER
+===================================== */
+
+.process-icon-wrapper {
+  position: relative;
+  width: 61px;
+  height: 61px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 13px;
+  z-index: 2;
+}
+
+/* ICON RING */
+.process-icon-ring {
+  position: absolute;
+  inset: -5px;
+  border: 1px solid rgba(150, 80, 255, 0.35);
+  border-radius: 50%;
+  animation: processRing 3s ease-in-out infinite;
+}
+
+/* ICON CIRCLE */
+.process-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: linear-gradient(
+    145deg,
+    #a32cff,
+    #711bdf
+  );
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(153, 75, 255, 0.12),
+    0 0 20px rgba(151, 48, 255, 0.48);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.process-blue .process-icon {
+  background: linear-gradient(
+    145deg,
+    #378cff,
+    #174bdc
+  );
+  box-shadow:
+    0 0 0 4px rgba(61, 125, 255, 0.12),
+    0 0 20px rgba(61, 125, 255, 0.48);
+}
+
+/* STEP NUMBER */
+.process-step-number {
+  position: absolute;
+  top: -9px;
+  right: -8px;
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 900;
+  background: #242a78;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.process-step:hover .process-icon {
+  transform: translateY(-7px) scale(1.1);
+  box-shadow:
+    0 0 0 5px rgba(153, 75, 255, 0.15),
+    0 0 30px rgba(151, 48, 255, 0.65);
+}
+
+.process-blue:hover .process-icon {
+  box-shadow:
+    0 0 0 5px rgba(61, 125, 255, 0.15),
+    0 0 30px rgba(61, 125, 255, 0.65);
+}
+
+.process-step:hover .process-step-number {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================================
+   STEP CONTENT
+===================================== */
+
+.process-content {
+  width: 100%;
+  padding: 0 3px;
+}
+
+.process-content h3 {
+  margin-bottom: 5px;
+  color: #191f59;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.process-content p {
+  color: #596087;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =====================================
+   BOTTOM MESSAGE
+===================================== */
+
+.process-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 55px;
+}
+
+.process-bottom p {
+  color: #6e43d5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.process-bottom-line {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #a36aff
+  );
+}
+
+.process-bottom-line:last-child {
+  background: linear-gradient(
+    90deg,
+    #a36aff,
+    transparent
+  );
+}
+
+/* =====================================
+   SCROLL REVEAL
+===================================== */
+
+.process-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--step-delay, 0ms);
+}
+
+.process-reveal.process-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes processLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes processRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+}
+
+@keyframes processGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 25px) scale(0.95);
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+  .process-page {
+    padding: 40px 3% 55px;
+  }
+
+  .process-timeline {
+    gap: 5px;
+  }
+
+  .process-content h3 {
+    font-size: 12px;
+  }
+
+  .process-content p {
+    font-size: 9px;
+  }
+
+  .process-icon-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+
+  .process-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .process-track {
+    top: 26px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+  .process-page {
+    min-height: calc(100vh - 68px);
+    padding: 35px 20px 45px;
+  }
+
+  .process-heading {
+    margin-bottom: 38px;
+  }
+
+  .process-heading h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .process-heading p {
+    font-size: 11px;
+  }
+
+  /* Vertical timeline */
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-left: 7px;
+  }
+
+  /* Vertical connecting line */
+  .process-track {
+    top: 25px;
+    bottom: 25px;
+    left: 28px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .process-track-fill {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: processMobileLine 2.5s ease forwards;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+  }
+
+  .process-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    margin: 0;
+  }
+
+  .process-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .process-content {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(173, 147, 255, 0.35);
+    border-radius: 13px;
+    box-shadow: 0 5px 16px rgba(94, 65, 180, 0.06);
+  }
+
+  .process-content h3 {
+    font-size: 13px;
+  }
+
+  .process-content p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .process-step-number {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .process-bottom {
+    margin-top: 40px;
+    gap: 10px;
+  }
+
+  .process-bottom p {
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .process-bottom-line {
+    width: 30px;
+    flex-shrink: 0;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+  .process-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .process-heading h1 {
+    font-size: 23px;
+  }
+
+  .process-timeline {
+    gap: 23px;
+  }
+
+  .process-step {
+    grid-template-columns: 49px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .process-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .process-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .process-content {
+    padding: 10px 12px;
+  }
+}
+
+/* =====================================
+   MOBILE LINE ANIMATION
+===================================== */
+
+@keyframes processMobileLine {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .process-glow,
+  .process-icon-ring {
+    animation: none;
+  }
+
+  .process-track-fill {
+    animation: none;
+    transform: none;
+  }
+
+  .process-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

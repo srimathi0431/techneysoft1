@@ -1,0 +1,91 @@
+/* =========================================
+   CONTINUOUS ANIMATIONS - ALWAYS RUNNING
+   These animations run continuously regardless of scroll position
+========================================= */
+
+/* Continuous floating animation */
+@keyframes float-continuous {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Continuous glow pulse */
+@keyframes glow-pulse-continuous {
+  0%, 100% {
+    opacity: 0.6;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+}
+
+/* Continuous rotation */
+@keyframes rotate-continuous {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Continuous scale pulse */
+@keyframes scale-pulse-continuous {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* =========================================
+   UTILITY CLASSES FOR CONTINUOUS ANIMATIONS
+========================================= */
+
+.animate-float {
+  animation: float-continuous 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse-continuous 2s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate-continuous 20s linear infinite;
+}
+
+.animate-pulse {
+  animation: scale-pulse-continuous 2s ease-in-out infinite;
+}
+
+/* =========================================
+   PERFORMANCE OPTIMIZATIONS
+========================================= */
+
+.animate-float,
+.animate-glow,
+.animate-rotate,
+.animate-pulse {
+  will-change: transform, opacity;
+}
+
+/* =========================================
+   REDUCED MOTION - ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-glow,
+  .animate-rotate,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+

@@ -1,0 +1,718 @@
+/* =========================================
+   TECHNOLOGIES PAGE - COMPACT FLIP CARDS
+========================================= */
+
+.ts-tech-page {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 60px 5% 50px;
+  background: linear-gradient(135deg, #f8f6ff 0%, #f0ebff 50%, #f5f2ff 100%);
+  overflow: hidden;
+}
+
+.ts-tech-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(147, 51, 234, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* =========================================
+   HERO HEADER
+========================================= */
+
+.ts-tech-hero {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.ts-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  color: #8b5cf6;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.ts-tech-main-title {
+  font-size: clamp(28px, 4.5vw, 42px);
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.ts-tech-highlight {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ts-tech-main-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   FLIP CARDS GRID
+========================================= */
+
+.ts-tech-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   FLIP CARD CONTAINER
+========================================= */
+
+.ts-tech-flip-container {
+  perspective: 1500px;
+  height: 200px; /* Reduced by 1/3: 300 * 0.67 = 200 */
+  cursor: pointer;
+  position: relative;
+}
+
+.ts-tech-flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.ts-tech-flip-container.flipped .ts-tech-flip-card {
+  transform: rotateY(180deg);
+}
+
+/* =========================================
+   CARD FRONT
+========================================= */
+
+.ts-tech-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  background: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(135deg, #a855f7, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.12);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    background-image: linear-gradient(white, white),
+      linear-gradient(135deg, #a855f7, #06b6d4);
+  }
+  25% {
+    background-image: linear-gradient(white, white),
+      linear-gradient(135deg, #06b6d4, #10b981);
+  }
+  50% {
+    background-image: linear-gradient(white, white),
+      linear-gradient(135deg, #10b981, #f59e0b);
+  }
+  75% {
+    background-image: linear-gradient(white, white),
+      linear-gradient(135deg, #f59e0b, #ef4444);
+  }
+}
+
+.ts-tech-card-front:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.18);
+}
+
+.ts-tech-front-content {
+  padding: 15px 12px; /* Reduced by 1/3: 22→15, 18→12 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ts-tech-card-icon {
+  width: 33px; /* Reduced by 1/3: 50 * 0.67 = 33 */
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
+}
+
+.ts-tech-card-front:hover .ts-tech-card-icon {
+  transform: scale(1.05);
+}
+
+.ts-tech-card-title {
+  font-size: 10px; /* Reduced by 1/3: 15 * 0.67 = 10 */
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.ts-tech-card-desc {
+  font-size: 7px; /* Reduced by 1/3: 11 * 0.67 = 7 */
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 auto 0;
+  flex-grow: 1;
+}
+
+.ts-tech-flip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* Reduced: 6 * 0.67 = 4 */
+  padding: 7px 13px; /* Reduced: 10→7, 20→13 */
+  border: none;
+  border-radius: 7px; /* Reduced: 10 * 0.67 = 7 */
+  color: white;
+  font-size: 8px; /* Reduced: 12 * 0.67 = 8 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ts-tech-flip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ts-tech-flip-indicator {
+  display: flex;
+  align-items: center;
+  gap: 3px; /* Reduced: 5 * 0.67 = 3 */
+  margin-top: 7px; /* Reduced: 10 * 0.67 = 7 */
+  font-size: 7px; /* Reduced: 10 * 0.67 = 7 */
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.ts-tech-flip-indicator svg {
+  width: 12px;
+  height: 12px;
+  animation: rotateHint 2s ease-in-out infinite;
+}
+
+@keyframes rotateHint {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+/* =========================================
+   CARD BACK
+========================================= */
+
+.ts-tech-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border-radius: 18px;
+  background: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(135deg, #a855f7, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.12);
+}
+
+.ts-tech-back-content {
+  padding: 15px 12px 12px; /* Reduced by 1/3: 22→15, 18→12 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ts-tech-back-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ts-tech-back-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.ts-tech-back-header h3 {
+  font-size: 10px; /* Reduced by 1/3: 15 * 0.67 = 10 */
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* =========================================
+   TECHNOLOGY GRID (BACK)
+========================================= */
+
+.ts-tech-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.ts-tech-tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* Reduced: 6 * 0.67 = 4 */
+  padding: 8px 7px; /* Reduced: 12→8, 10→7 */
+  background: white;
+  border-radius: 8px; /* Reduced: 12 * 0.67 = 8 */
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 47px; /* Reduced by 1/3: 70 * 0.67 = 47 */
+}
+
+/* Different colors for each technology item */
+.ts-tech-tech-item:nth-child(1) {
+  background: linear-gradient(135deg, #f0e7ff, #e9d5ff);
+  border-color: #d8b4fe;
+  animation: colorShift1 4s ease-in-out infinite;
+}
+
+@keyframes colorShift1 {
+  0%, 100% {
+    background: linear-gradient(135deg, #f0e7ff, #e9d5ff);
+    border-color: #d8b4fe;
+  }
+  50% {
+    background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
+    border-color: #c4b5fd;
+  }
+}
+
+.ts-tech-tech-item:nth-child(2) {
+  background: linear-gradient(135deg, #fff7ed, #fed7aa);
+  border-color: #fdba74;
+  animation: colorShift2 4s ease-in-out infinite 1s;
+}
+
+@keyframes colorShift2 {
+  0%, 100% {
+    background: linear-gradient(135deg, #fff7ed, #fed7aa);
+    border-color: #fdba74;
+  }
+  50% {
+    background: linear-gradient(135deg, #fed7aa, #fbbf24);
+    border-color: #f59e0b;
+  }
+}
+
+.ts-tech-tech-item:nth-child(3) {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-color: #93c5fd;
+  animation: colorShift3 4s ease-in-out infinite 2s;
+}
+
+@keyframes colorShift3 {
+  0%, 100% {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-color: #93c5fd;
+  }
+  50% {
+    background: linear-gradient(135deg, #bfdbfe, #60a5fa);
+    border-color: #3b82f6;
+  }
+}
+
+.ts-tech-tech-item:nth-child(4) {
+  background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+  border-color: #fda4af;
+  animation: colorShift4 4s ease-in-out infinite 3s;
+}
+
+@keyframes colorShift4 {
+  0%, 100% {
+    background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+    border-color: #fda4af;
+  }
+  50% {
+    background: linear-gradient(135deg, #fecdd3, #fb7185);
+    border-color: #f43f5e;
+  }
+}
+
+.ts-tech-tech-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, #faf5ff, #ede9fe);
+}
+
+.ts-tech-tech-emoji {
+  font-size: 19px; /* Reduced by 1/3: 28 * 0.67 = 19 */
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ts-tech-tech-name {
+  font-size: 8px; /* Reduced by 1/3: 11.5 * 0.67 = 8 */
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.ts-tech-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* Reduced: 6 * 0.67 = 4 */
+  padding: 7px 16px; /* Reduced: 10→7, 24→16 */
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 7px; /* Reduced: 10 * 0.67 = 7 */
+  color: #64748b;
+  font-size: 8px; /* Reduced: 12 * 0.67 = 8 */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: auto;
+  align-self: center;
+}
+
+.ts-tech-back-btn:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background: #f8f6ff;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .ts-tech-page {
+    padding: 80px 4% 60px;
+  }
+
+  .ts-tech-flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .ts-tech-flip-container {
+    height: 267px; /* Reduced by 1/3: 400 * 0.67 = 267 */
+  }
+
+  .ts-tech-main-title {
+    font-size: 36px;
+  }
+
+  .ts-tech-main-desc {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (2x2 GRID)
+========================================= */
+
+@media (max-width: 768px) {
+  .ts-tech-page {
+    padding: 30px 4% 25px;
+  }
+
+  .ts-tech-hero {
+    margin-bottom: 20px;
+  }
+
+  .ts-tech-badge {
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+
+  .ts-tech-main-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .ts-tech-main-desc {
+    font-size: 11px;
+  }
+
+  /* 2x2 GRID FOR MAIN CARDS - 30% SMALLER */
+  .ts-tech-flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .ts-tech-flip-container {
+    height: 131px; /* Reduced: 196 * 0.67 = 131 */
+    cursor: pointer;
+  }
+
+  /* FIX FLIP ANIMATION - Use opacity transition */
+  .ts-tech-flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: none;
+    transform: none !important;
+  }
+
+  .ts-tech-card-front,
+  .ts-tech-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: visible;
+    transform: none !important;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Show/Hide with opacity for smooth flip effect */
+  .ts-tech-flip-container:not(.flipped) .ts-tech-card-front {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .ts-tech-flip-container:not(.flipped) .ts-tech-card-back {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .ts-tech-flip-container.flipped .ts-tech-card-front {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .ts-tech-flip-container.flipped .ts-tech-card-back {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .ts-tech-front-content,
+  .ts-tech-back-content {
+    padding: 10px 8px;
+  }
+
+  .ts-tech-card-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+
+  .ts-tech-card-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ts-tech-card-title {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .ts-tech-card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .ts-tech-flip-btn {
+    padding: 6px 10px;
+    font-size: 8px;
+    margin-top: 4px;
+  }
+
+  .ts-tech-flip-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ts-tech-flip-indicator {
+    font-size: 7px;
+    margin-top: 4px;
+  }
+
+  .ts-tech-flip-indicator svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* BACK SIDE - 2x2 GRID FOR TECHNOLOGIES */
+  .ts-tech-back-header {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .ts-tech-back-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ts-tech-back-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ts-tech-back-header h3 {
+    font-size: 10px;
+  }
+
+  /* 2x2 GRID FOR TECHNOLOGY ITEMS - MOBILE */
+  .ts-tech-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .ts-tech-tech-item {
+    padding: 4px 3px; /* Reduced proportionally */
+    min-height: 25px; /* Reduced: 38 * 0.67 = 25 */
+    border-radius: 4px; /* Reduced: 6 * 0.67 = 4 */
+  }
+
+  .ts-tech-tech-emoji {
+    font-size: 16px;
+  }
+
+  .ts-tech-tech-name {
+    font-size: 8px;
+  }
+
+  .ts-tech-back-btn {
+    padding: 6px 12px;
+    font-size: 8px;
+    margin-top: 8px;
+  }
+
+  .ts-tech-back-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .ts-tech-page {
+    padding: 25px 3% 20px;
+  }
+
+  .ts-tech-main-title {
+    font-size: 16px;
+  }
+
+  .ts-tech-flip-grid {
+    gap: 8px;
+  }
+
+  .ts-tech-flip-container {
+    height: 122px; /* Reduced: 182 * 0.67 = 122 */
+  }
+
+  .ts-tech-card-title {
+    font-size: 9px;
+  }
+
+  .ts-tech-card-desc {
+    font-size: 7px;
+  }
+
+  .ts-tech-front-content,
+  .ts-tech-back-content {
+    padding: 8px 6px;
+  }
+
+  .ts-tech-tech-item {
+    padding: 3px 2px; /* Reduced proportionally */
+    min-height: 23px; /* Reduced: 35 * 0.67 = 23 */
+  }
+
+  .ts-tech-tech-emoji {
+    font-size: 14px;
+  }
+
+  .ts-tech-tech-name {
+    font-size: 7px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-tech-flip-card,
+  .ts-tech-card-front,
+  .ts-tech-tech-item,
+  .ts-tech-flip-btn,
+  .ts-tech-back-btn {
+    transition: none;
+  }
+
+  /* Keep flip indicator animation running */
+}

@@ -1,0 +1,1069 @@
+/* ========================================
+   PRICING & TERMS PAGE
+======================================== */
+
+.pricing-terms-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f5ff 0%, #f5f2ff 50%, #f8f5ff 100%);
+  padding: 70px 20px 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Orbs */
+.pt-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: ptFloat 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pt-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #a855f7, #8b5cf6);
+  top: 10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.pt-orb-2 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  top: 50%;
+  right: -8%;
+  animation-delay: 2s;
+}
+
+.pt-orb-3 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  bottom: 20%;
+  left: 5%;
+  animation-delay: 4s;
+}
+
+@keyframes ptFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.pt-hero {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 50px;
+  color: #8b5cf6;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.pt-hero-badge:hover {
+  background: rgba(139, 92, 246, 0.18);
+  transform: translateY(-2px);
+}
+
+.pt-hero-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.pt-hero-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #11143d;
+  margin: 0 0 20px;
+  letter-spacing: -1.5px;
+}
+
+.pt-highlight {
+  background: linear-gradient(90deg, #8b5cf6, #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pt-hero-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #626681;
+  margin: 0;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   SECTION HEADERS
+======================================== */
+
+.pt-section-header {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+.pt-section-header h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 900;
+  color: #11143d;
+  margin: 0 0 12px;
+  letter-spacing: -1px;
+}
+
+.pt-section-header p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #626681;
+  margin: 0;
+}
+
+/* ========================================
+   PRICING SECTION
+======================================== */
+
+.pt-pricing-section {
+  max-width: 1300px;
+  margin: 0 auto 80px;
+}
+
+.pt-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.pt-pricing-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid rgba(139, 92, 246, 0.15);
+  border-radius: 24px;
+  padding: 32px 28px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+}
+
+.pt-pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.2);
+  border-color: var(--plan-color);
+}
+
+.pt-pricing-card.popular {
+  border-color: #8b5cf6;
+  border-width: 2px;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+}
+
+.pt-popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 20px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.pt-card-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(98, 105, 135, 0.1);
+}
+
+.pt-card-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.pt-pricing-card:hover .pt-card-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.pt-card-header h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #11143d;
+  margin: 0 0 6px;
+}
+
+.pt-card-subtitle {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--plan-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.pt-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #626681;
+  margin: 0;
+}
+
+.pt-card-price {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.pt-price-amount {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--plan-color);
+  display: block;
+}
+
+.pt-card-features {
+  margin-bottom: 28px;
+}
+
+.pt-card-features h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #11143d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px;
+}
+
+.pt-card-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pt-card-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #626681;
+  font-weight: 600;
+}
+
+.pt-card-features li svg {
+  color: var(--plan-color);
+  flex-shrink: 0;
+}
+
+.pt-card-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+}
+
+.pt-card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+}
+
+.pt-card-btn:active {
+  transform: translateY(0);
+}
+
+.pt-card-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   SERVICE COMMITMENTS
+======================================== */
+
+.pt-commitments-section {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pt-commitment-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: #ffffff;
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(135deg, #8b5cf6, #6366f1, #8b5cf6);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.pt-commitment-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    transparent
+  );
+  transform: rotate(0deg);
+  transition: transform 0.6s ease;
+}
+
+.pt-commitment-card:hover::before {
+  transform: rotate(180deg);
+}
+
+.pt-commitment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+}
+
+.pt-commitment-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 12px;
+  color: #8b5cf6;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-commitment-card:hover .pt-commitment-icon {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.pt-commitment-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pt-commitment-content h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #11143d;
+  margin: 0 0 6px;
+}
+
+.pt-commitment-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #626681;
+  margin: 0;
+}
+
+/* ========================================
+   PREMIUM ANIMATIONS
+======================================== */
+
+/* Hero Badge Animation - Visible immediately on mobile */
+.pt-hero-badge {
+  animation: ptBadgeFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@media (max-width: 700px) {
+  .pt-hero-badge {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@keyframes ptBadgeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hero Title Animation - Visible immediately on mobile */
+.pt-hero-title {
+  animation: ptTitleReveal 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+@media (max-width: 700px) {
+  .pt-hero-title {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@keyframes ptTitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Description Animation - Visible immediately on mobile */
+.pt-hero-desc {
+  animation: ptDescFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+@media (max-width: 700px) {
+  .pt-hero-desc {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@keyframes ptDescFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Commitment Card Enhanced Hover */
+.pt-commitment-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.15),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.pt-commitment-card:hover::after {
+  left: 100%;
+}
+
+.pt-commitment-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.25),
+              0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.pt-commitment-card:hover .pt-commitment-icon {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+/* Term Item Hover Animation */
+.pt-term-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pt-term-item:hover {
+  transform: translateX(10px);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.pt-term-item:hover .pt-term-number {
+  transform: scale(1.15);
+  color: #8b5cf6;
+}
+
+.pt-term-number {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section Header Animation */
+.pt-section-header h2 {
+  position: relative;
+}
+
+.pt-section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #6366f1);
+  border-radius: 2px;
+  animation: ptUnderline 0.8s ease-out forwards;
+}
+
+@keyframes ptUnderline {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   TERMS & CONDITIONS
+======================================== */
+
+.pt-terms-section {
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-terms-container {
+  background: #ffffff;
+  border: 2px solid rgba(139, 92, 246, 0.12);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.pt-terms-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.05),
+    transparent
+  );
+  animation: ptShine 3s ease-in-out infinite;
+}
+
+@keyframes ptShine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.pt-terms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-term-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px;
+  background: rgba(139, 92, 246, 0.03);
+  border-left: 3px solid #8b5cf6;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.pt-term-item:hover {
+  background: rgba(139, 92, 246, 0.08);
+  transform: translateX(4px);
+  border-left-width: 5px;
+}
+
+.pt-term-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #8b5cf6;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.pt-term-item:hover .pt-term-number {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.pt-term-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #11143d;
+  margin: 6px 0 0;
+  font-weight: 600;
+}
+
+/* ========================================
+   CTA SECTION
+======================================== */
+
+.pt-cta-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pt-cta-content {
+  text-align: center;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
+}
+
+.pt-cta-content h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.pt-cta-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 28px;
+}
+
+.pt-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: #ffffff;
+  color: #8b5cf6;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pt-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.pt-cta-btn:active {
+  transform: translateY(-1px);
+}
+
+.pt-cta-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   TABLET (768px - 1023px)
+======================================== */
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .pricing-terms-page {
+    padding: 70px 30px 50px;
+  }
+
+  .pt-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .pt-pricing-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .pt-commitments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .pt-terms-container {
+    padding: 32px;
+  }
+}
+
+/* ========================================
+   MOBILE (320px - 767px)
+======================================== */
+
+@media (max-width: 767px) {
+  .pricing-terms-page {
+    padding: 35px 12px 30px;
+  }
+
+  .pt-hero {
+    margin-bottom: 35px;
+  }
+
+  .pt-hero-badge {
+    padding: 7px 15px;
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  .pt-hero-title {
+    font-size: clamp(22px, 6vw, 30px);
+    margin-bottom: 13px;
+  }
+
+  .pt-hero-desc {
+    font-size: 12px;
+  }
+
+  .pt-section-header {
+    margin-bottom: 25px;
+  }
+
+  .pt-section-header h2 {
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 8px;
+  }
+
+  .pt-section-header p {
+    font-size: 12px;
+  }
+
+  /* PRICING CARDS - SINGLE COLUMN */
+  .pt-pricing-section {
+    margin-bottom: 45px;
+  }
+
+  .pt-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .pt-pricing-card {
+    padding: 22px 18px;
+  }
+
+  .pt-popular-badge {
+    font-size: 9px;
+    padding: 4px 14px;
+  }
+
+  .pt-card-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+  }
+
+  .pt-card-header h3 {
+    font-size: 18px;
+  }
+
+  .pt-card-subtitle {
+    font-size: 9px;
+  }
+
+  .pt-card-desc {
+    font-size: 10px;
+  }
+
+  .pt-price-amount {
+    font-size: 24px;
+  }
+
+  .pt-card-features {
+    margin-bottom: 20px;
+  }
+
+  .pt-card-features h4 {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .pt-card-features li {
+    font-size: 11px;
+    gap: 7px;
+  }
+
+  .pt-card-features li svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pt-card-btn {
+    padding: 11px 20px;
+    font-size: 12px;
+  }
+
+  /* COMMITMENTS - SINGLE COLUMN - ULTRA TINY */
+  .pt-commitments-section {
+    margin-bottom: 18px;
+  }
+
+  .pt-commitments-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .pt-commitment-card {
+    padding: 5px 6px;
+    gap: 5px;
+    border-radius: 6px;
+    border-width: 1px;
+  }
+
+  .pt-commitment-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+  }
+
+  .pt-commitment-icon svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .pt-commitment-content h4 {
+    font-size: 7px;
+    margin-bottom: 1px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .pt-commitment-content p {
+    font-size: 5.5px;
+    line-height: 1.2;
+  }
+
+  /* TERMS - MOBILE LAYOUT */
+  .pt-terms-section {
+    margin-bottom: 45px;
+  }
+
+  .pt-terms-container {
+    padding: 20px 15px;
+  }
+
+  .pt-terms-list {
+    gap: 13px;
+  }
+
+  .pt-term-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .pt-term-number {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .pt-term-item p {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  /* CTA - MOBILE */
+  .pt-cta-content {
+    padding: 32px 20px;
+  }
+
+  .pt-cta-content h2 {
+    font-size: clamp(19px, 5.5vw, 24px);
+    margin-bottom: 8px;
+  }
+
+  .pt-cta-content p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .pt-cta-btn {
+    padding: 12px 26px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   EXTRA SMALL MOBILE (320px - 374px)
+======================================== */
+
+@media (max-width: 374px) {
+  .pricing-terms-page {
+    padding: 55px 14px 45px;
+  }
+
+  .pt-hero-title {
+    font-size: 24px;
+  }
+
+  .pt-hero-desc {
+    font-size: 13px;
+  }
+
+  .pt-pricing-card {
+    padding: 24px 18px;
+  }
+
+  .pt-card-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .pt-card-header h3 {
+    font-size: 20px;
+  }
+
+  .pt-price-amount {
+    font-size: 26px;
+  }
+
+  .pt-card-features li {
+    font-size: 12px;
+  }
+
+  .pt-commitment-card {
+    padding: 18px;
+  }
+
+  .pt-commitment-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pt-commitment-content h4 {
+    font-size: 14px;
+  }
+
+  .pt-commitment-content p {
+    font-size: 11px;
+  }
+
+  .pt-terms-container {
+    padding: 20px 14px;
+  }
+
+  .pt-term-item {
+    padding: 12px;
+  }
+
+  .pt-term-item p {
+    font-size: 12px;
+  }
+
+  .pt-cta-content {
+    padding: 35px 20px;
+  }
+
+  .pt-cta-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION - ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-orb,
+  .pt-hero-badge,
+  .pt-hero-title,
+  /* Keep animations and transitions */
+  .pt-hero-badge,
+  .pt-hero-title,
+  .pt-hero-desc {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
