@@ -380,7 +380,7 @@ export default function Home() {
       {/* FEATURED SERVICES */}
       <section
         className="ts-service-strip"
-        id="services"
+        id="home-services"
         aria-label="Featured services"
       >
         {serviceItems.map(
@@ -411,14 +411,6 @@ export default function Home() {
 
       {/* BOTTOM GLOW */}
       <div className="ts-bottom-glow" />
-
-      {/* NAVIGATION TARGETS */}
-      <div className="ts-anchor-targets" aria-hidden="true">
-        <span id="about" />
-        <span id="technologies" />
-        <span id="projects" />
-        <span id="contact" />
-      </div>
     </main>
   );
 }

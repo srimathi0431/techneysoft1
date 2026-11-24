@@ -9,18 +9,26 @@ export default function Navbar() {
   const scrollToSection = (sectionId) => {
     closeMenu();
     
+    console.log('Scrolling to section:', sectionId); // Debug log
+    
     // Use requestAnimationFrame for smoother scroll
     requestAnimationFrame(() => {
       const element = document.getElementById(sectionId);
+      console.log('Found element:', element); // Debug log
+      
       if (element) {
         const navbarHeight = 60;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
+        console.log('Scrolling to position:', offsetPosition); // Debug log
+
         window.scrollTo({
           top: offsetPosition,
           behavior: "smooth"
         });
+      } else {
+        console.error('Element not found with id:', sectionId); // Error log
       }
     });
   };
@@ -80,13 +88,13 @@ export default function Navbar() {
             Services
           </a>
           <a
-            href="#solutions"
+            href="#projects"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('solutions');
+              scrollToSection('projects');
             }}
           >
-            Solutions
+            Projects
           </a>
           <a
             href="#technologies"
